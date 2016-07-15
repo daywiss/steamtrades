@@ -4,7 +4,7 @@ var querystring = require('querystring')
 
 function call(host,token,url,path,method,data){
   var options = {
-    uri:url,
+    uri:url + path,
     method:method || 'GET',
     body:data,
     json:true,
