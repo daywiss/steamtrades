@@ -56,13 +56,14 @@ module.exports = function(options){
 
   methods.scanUserInventory = function(trade_url,context_id,force_refresh){
     var data = {trade_url:trade_url,context_id:context_id,force_refresh:force_refresh}
-    var path = 'item/scan_user_inventory'
-    return methods.call(path,'POST',data)
+    var query = querystring.stringify(data)
+    var path = ['item/scan_user_inventory/', query].join('?');
+    return methods.call(path,'POST')
   }
 
   methods.userInventory = function(trade_url,context_id){
     var query = querystring.stringify({context_id:context_id,trade_url:trade_url})
-    var path = ['item/user_inventory',query].join('?')
+    var path = ['item/user_inventory/',query].join('?')
     return methods.call(path)
   }
 
@@ -75,21 +76,21 @@ module.exports = function(options){
   }
 
   methods.requestItems = function(trade_url,items,message) {
-    var data = {trade_url:trade_url, items:items, message:message}
-    var path = 'trade/request_items'
-    return methods.call(path,'POST',data)
+    var query = querystring.stringify({trade_url:trade_url, items:items, message:message})
+    var path = ['trade/request_items/',query].join('?')
+    return methods.call(path,'POST')
   }
 
   methods.sendItems = function(trade_url,items,message){
-    var data = {trade_url:trade_url,items:items,message:message}
-    var path = 'trade/send_items'
-    return methods.call(path,'POST',data)
+    var query = querystring.stringify({trade_url:trade_url, items:items, message:message})
+    var path = ['trade/send_items/',query].join('?')
+    return methods.call(path,'POST')
   }
 
   methods.transferItems = function(items,dst_app_id,allow_foreign_dst){
-    var data = {dst_app_id:dst_app_id,items:items,allow_foreign_dst:allow_foreign_dst}
-    var path = 'trade/transfer_items'
-    return methods.call(path,'POST',data)
+    var query = querystring.stringify({dst_app_id:dst_app_id,items:items,allow_foreign_dst:allow_foreign_dst})
+    var path = ['trade/send_items/',query].join('?')
+    return methods.call(path,'POST')
   }
 
   return methods
