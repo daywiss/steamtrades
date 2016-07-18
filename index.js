@@ -40,12 +40,12 @@ module.exports = function(options){
     return methods.call(path)
   }
 
-  methods.game =function(){
-    return methods.call('game')
+  methods.game =function(id){
+    return methods.call('game/'+id)
   }
 
-  methods.games=function(id){
-    return methods.call('game/'+id)
+  methods.games=function(){
+    return methods.call('game')
   }
 
   methods.mine = function(context_id,offset,limit){
