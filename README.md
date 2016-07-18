@@ -23,7 +23,7 @@ Function names are based on the last part of each steamtrad.es api url. They wil
 `steamtrades.infoBySteamID(steam_id, force_refresh)`   
 
 **Queries information about a Steam user by trade URL.**   
-`teamtrades.infoByTradeURL(trade_url, force_refresh)`
+`steamtrades.infoByTradeURL(trade_url, force_refresh)`
 
 **Obtain a list of all supported games.**    
 `steamtrades.games()`
