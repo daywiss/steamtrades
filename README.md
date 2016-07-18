@@ -19,7 +19,7 @@ See complete definitions at [https://steamtrad.es/doc/api-explorer](https://stea
 
 Function names are based on the last part of each steamtrad.es api url. They will return entire request object from promise. 
 
-**Queries information about a Steam user by Steam ID.**
+**Queries information about a Steam user by Steam ID.**   
 `steamtrades.infoBySteamID(steam_id, force_refresh)`   
 
 **Queries information about a Steam user by trade URL.**   
