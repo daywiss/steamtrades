@@ -76,19 +76,19 @@ module.exports = function(options){
   }
 
   methods.requestItems = function(trade_url,items,message) {
-    var query = querystring.stringify({trade_url:trade_url, items:items, message:message})
+    var query = querystring.stringify({trade_url:trade_url, items:items, message:message, omit_vtt_url: true})
     var path = ['trade/request_items/',query].join('?')
     return methods.call(path,'POST')
   }
 
   methods.sendItems = function(trade_url,items,message){
-    var query = querystring.stringify({trade_url:trade_url, items:items, message:message})
+    var query = querystring.stringify({trade_url:trade_url, items:items, message:message, omit_vtt_url: true})
     var path = ['trade/send_items/',query].join('?')
     return methods.call(path,'POST')
   }
 
   methods.transferItems = function(items,dst_app_id,allow_foreign_dst){
-    var query = querystring.stringify({dst_app_id:dst_app_id,items:items,allow_foreign_dst:allow_foreign_dst})
+    var query = querystring.stringify({dst_app_id:dst_app_id,items:items,allow_foreign_dst:allow_foreign_dst, omit_vtt_url: true})
     var path = ['trade/send_items/',query].join('?')
     return methods.call(path,'POST')
   }

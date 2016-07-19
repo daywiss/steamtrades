@@ -1,6 +1,6 @@
 {
   "name": "steamtrad.es",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Steamtrad.es API client with promises",
   "main": "index.js",
   "repository":{
